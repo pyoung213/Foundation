@@ -7,9 +7,12 @@ import map from "@/map";
 describe("Typescript usage suite", () => {
     const array = [1, 2];
 
-    it('should map values in `collection` to a new array', async () => {
-        const object = { 'a': 1, 'b': 2 },
-            expected = ['1', '2'];
+    it("should map values in `collection` to a new array", async () => {
+        const object = {
+            "a": 1,
+            "b": 2
+        };
+        const expected = ["1", "2"];
 
         // const suite = new Benchmark.Suite;
 

@@ -1,13 +1,22 @@
-async function _mapArray(array: any[], asyncFunc: Function): Promise<Array<any>> {
+async function _mapArray(array: any[], asyncFunc: Function, options: MapOptions = {}): Promise<Array<any>> {
     let index = -1;
     const length = array == null ? 0 : array.length;
     const result = new Array(length);
 
-    while (++index < length) {
-        result[index] = asyncFunc(array[index], index, array);
+    if (options.isParallel) {
+        while (++index < length) {
+            result[index] = asyncFunc(array[index], index, array);
+        }
+
+        return Promise.all(result);
     }
 
-    return Promise.all(result);
+    while (++index < length) {
+        result[index] = await asyncFunc(array[index], index, array);
+    }
+
+    return result;
+
 }
 
 export default _mapArray;

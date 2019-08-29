@@ -1,0 +1,3 @@
+interface MapOptions {
+    isParallel?: boolean;
+}

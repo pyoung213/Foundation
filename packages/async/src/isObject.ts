@@ -1,6 +1,7 @@
-function isObject(value: any) {
-    const type = typeof value
-    return value != null && (type == 'object' || type == 'function')
+function isObject(value: any): boolean {
+    const type = typeof value;
+
+    return value != null && (type == "object" || type == "function");
 }
 
-export default isObject
+export default isObject;
