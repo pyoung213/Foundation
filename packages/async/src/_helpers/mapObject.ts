@@ -1,4 +1,4 @@
-async function _mapObject(object: object, asyncFunc: Function, options: MapOptions = {}): Promise<Array<any>> {
+async function mapObject(object: object, asyncFunc: Function, options: MapOptions = {}): Promise<Array<any>> {
     let index = -1;
     const keys = Object.keys(object);
     const result = new Array(keys.length);
@@ -18,4 +18,4 @@ async function _mapObject(object: object, asyncFunc: Function, options: MapOptio
     return result;
 }
 
-export default _mapObject;
+export default mapObject;

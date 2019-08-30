@@ -3,6 +3,16 @@ module.exports = {
     env: {
         node: true,
     },
+    overrides: [
+        {
+            files: [
+                "**/*.spec.ts"
+            ],
+            env: {
+                mocha: true
+            }
+        }
+    ],
     extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:vue/essential",

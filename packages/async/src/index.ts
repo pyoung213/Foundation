@@ -1,5 +1,5 @@
-export { default as map } from "./map";
-export { default as mapParallel } from "./mapParallel";
-export { default as delay } from "./delay";
-export { default as forEach } from "./forEach";
-export { default as isObject } from "./isObject";
+export { default as map } from "./map/map";
+export { default as mapParallel } from "./mapParallel/mapParallel";
+export { default as delay } from "./delay/delay";
+export { default as forEach } from "./forEach/forEach";
+export { default as isObject } from "./isObject/isObject";

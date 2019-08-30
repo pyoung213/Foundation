@@ -1,4 +1,4 @@
-async function _mapArray(array: any[], asyncFunc: Function, options: MapOptions = {}): Promise<Array<any>> {
+async function mapArray(array: any[], asyncFunc: Function, options: MapOptions = {}): Promise<Array<any>> {
     let index = -1;
     const length = array == null ? 0 : array.length;
     const result = new Array(length);
@@ -19,4 +19,4 @@ async function _mapArray(array: any[], asyncFunc: Function, options: MapOptions 
 
 }
 
-export default _mapArray;
+export default mapArray;

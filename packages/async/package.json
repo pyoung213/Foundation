@@ -6,7 +6,7 @@
     "description": "Utility modules for async functions.",
     "author": "Patrick Young",
     "scripts": {
-        "test": "ts-mocha --paths tests/**/*.spec.ts --watch-extensions ts"
+        "test": "ts-mocha --paths **/*.spec.ts --watch-extensions ts"
     },
     "repository": {
         "type": "git",

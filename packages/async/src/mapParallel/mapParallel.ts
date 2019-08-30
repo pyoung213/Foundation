@@ -1,6 +1,6 @@
-import isObject from "./isObject";
-import mapObject from "./_mapObject";
-import mapArray from "./_mapArray";
+import isObject from "../isObject/isObject";
+import mapObject from "../_helpers/mapObject";
+import mapArray from "../_helpers/mapArray";
 
 function mapParallel(arrayOrObject: Array<any> | object, asyncFunc: Function): Promise<Array<any>> {
     if (isObject(arrayOrObject)) {
