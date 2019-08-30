@@ -1,28 +1,49 @@
 import Benchmark from "benchmark";
 import _ from "lodash";
 import map from "../src/map/map";
-import mapParallel from "../src/mapParallel/mapParallel";
 import forEach from "../src/forEach/forEach";
 
 const suite = new Benchmark.Suite;
 
-const array = [1, 2];
+const object = {
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+    e: 5,
+    f: 6,
+    g: 7,
+    h: 8,
+    i: 9,
+    j: 10
+};
+
+const array = [1,2,3,4,5,6,7,8,9,10];
 
 suite
-    .add("Async map", async () => {
-        await map(array, String);
+    .add("Async map object", () => {
+        map(object, "a");
     })
-    .add("Async mapParallel", async () => {
-        await mapParallel(array, String);
+    .add("Lodash map object", () => {
+        _.map(object, "a");
     })
-    .add("Lodash map", async () => {
+    .add("Async map array", () => {
+        map(array, String);
+    })
+    .add("Lodash map array", () => {
         _.map(array, String);
     })
-    .add("Async forEach", async () => {
-        await forEach(array, String);
+    .add("Native map array", () => {
+        array.map(String);
     })
-    .add("Lodash forEach", async () => {
+    .add("Async forEach", () => {
+        forEach(array, String);
+    })
+    .add("Lodash forEach", () => {
         _.forEach(array, String);
+    })
+    .add("Native forEach", () => {
+        array.forEach(String);
     })
     .on("cycle", function (event: any) {
         console.log(String(event.target));

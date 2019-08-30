@@ -1,7 +1,7 @@
 import map from "../map/map";
 
-function mapParallel(arrayOrObject: Array<any> | object, asyncFunc: Function): Promise<Array<any>> {
-    return map(arrayOrObject, asyncFunc, {
+function mapParallel(arrayOrObject: Array<any> | object, property: Function | string): Promise<Array<any>> | any[] {
+    return map(arrayOrObject, property, {
         isParallel: true
     });
 }
