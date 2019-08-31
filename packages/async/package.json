@@ -1,13 +1,22 @@
 {
-    "name": "async",
-    "version": "1.0.0",
+    "name": "foundation-async",
+    "version": "0.0.2",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "private": false,
     "license": "MIT",
     "description": "Utility modules for async functions.",
     "author": "Patrick Young",
+    "keywords": [
+        "async",
+        "lodash"
+    ],
     "scripts": {
+        "clean": "rm -rf dist",
+        "build": "yarn clean && tsc -p tsconfig.build.json",
         "test": "ts-mocha --paths **/*.spec.ts --watch-extensions ts",
-        "benchmarks": "ts-node -r tsconfig-paths/register --transpileOnly utils/benchmarks.ts"
+        "benchmarks": "ts-node -r tsconfig-paths/register --transpileOnly utils/benchmarks.ts",
+        "prepublish": "yarn build"
     },
     "repository": {
         "type": "git",

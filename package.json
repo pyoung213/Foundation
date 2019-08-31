@@ -4,7 +4,7 @@
         "packages/*"
     ],
     "scripts": {
-        "async:test": "yarn workspace async test"
+        "async:test": "yarn workspace foundation-async test"
     },
     "dependencies": {},
     "devDependencies": {

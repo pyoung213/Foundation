@@ -1,15 +1,16 @@
 {
     "compilerOptions": {
-        "allowJs": true,
         "target": "esnext",
         "module": "commonjs",
         "strict": true,
+        "declaration": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
         "suppressImplicitAnyIndexErrors": true,
         "allowSyntheticDefaultImports": true,
         "sourceMap": true,
         "baseUrl": ".",
+        "outDir": "./dist",
         "types": [
             "mocha",
             "chai"
@@ -25,11 +26,12 @@
         ]
     },
     "include": [
-        "types/**/*.ts",
-        "src/**/*.ts",
-        "utils/**/*.ts"
+        "./types/**/*.ts",
+        "./src/**/*.ts",
+        "./utils/**/*.ts"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "dist"
     ]
 }

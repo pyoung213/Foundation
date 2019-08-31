@@ -18,7 +18,7 @@ const object = {
     j: 10
 };
 
-const array = [1,2,3,4,5,6,7,8,9,10];
+const array = _.range(10);
 
 suite
     .add("Async map object", () => {
