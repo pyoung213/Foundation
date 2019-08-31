@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "private": false,
@@ -14,7 +14,7 @@
     "scripts": {
         "clean": "rm -rf dist",
         "build": "yarn clean && tsc -p tsconfig.build.json",
-        "test": "ts-mocha --paths **/*.spec.ts --watch-extensions ts",
+        "test": "ts-mocha -p tsconfig.test.json --paths **/*.spec.ts --watch-extensions ts",
         "benchmarks": "ts-node -r tsconfig-paths/register --transpileOnly utils/benchmarks.ts",
         "prepublish": "yarn build"
     },

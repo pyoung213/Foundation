@@ -1,4 +1,4 @@
-import isAsyncFunction from "@/isAsyncFunction/isAsyncFunction";
+import isAsyncFunction from "../isAsyncFunction/isAsyncFunction";
 
 const doAsyncLoop = async (object: object, asyncFunc: Function, options: MapOptions): Promise<Array<any>> => {
     let index = -1;

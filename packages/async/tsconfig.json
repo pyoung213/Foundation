@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "module": "commonjs",
+        "module": "esnext",
         "strict": true,
         "declaration": true,
         "moduleResolution": "node",
@@ -15,11 +15,6 @@
             "mocha",
             "chai"
         ],
-        "paths": {
-            "@/*": [
-                "src/*"
-            ]
-        },
         "lib": [
             "esnext",
             "dom"

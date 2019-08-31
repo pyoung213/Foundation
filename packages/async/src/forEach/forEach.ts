@@ -1,4 +1,4 @@
-import isAsyncFunction from "@/isAsyncFunction/isAsyncFunction";
+import isAsyncFunction from "../isAsyncFunction/isAsyncFunction";
 
 async function doAsyncLoop(array: Array<any>, asyncFunc: Function): Promise<void> {
     let index = -1;
