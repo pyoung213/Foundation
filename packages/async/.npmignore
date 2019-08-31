@@ -3,4 +3,4 @@ utils
 
 .browserlistrc
 tsconfig.build.json
-tsconfig.json
+tsconfig.test.json
