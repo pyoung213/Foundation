@@ -25,12 +25,6 @@
     },
     "dependencies": {},
     "devDependencies": {
-        "@types/benchmark": "1.0.31",
-        "@types/chai": "4.2.0",
-        "@types/chai-as-promised": "7.1.2",
-        "@types/lodash": "4.14.138",
-        "@types/mocha": "5.2.7",
-        "@types/sinon": "7.0.13",
         "benchmark": "2.1.4",
         "chai": "4.2.0",
         "lodash": "4.17.15",
