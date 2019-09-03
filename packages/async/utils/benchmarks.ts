@@ -2,6 +2,7 @@ import Benchmark from "benchmark";
 import _ from "lodash";
 import map from "../src/map/map";
 import forEach from "../src/forEach/forEach";
+import find from "../src/find/find";
 
 const suite = new Benchmark.Suite;
 
@@ -19,6 +20,18 @@ const object = {
 };
 
 const array = _.range(10);
+const collection = [
+    ...array.map(() => object),
+    {
+        foo: "bar"
+    }
+];
+
+async function asyncFunc(item: any): Promise<boolean> {
+    return await new Promise((resolve) => {
+        resolve(item.id === 2);
+    });
+}
 
 suite
     .add("Async map object", () => {
@@ -44,6 +57,24 @@ suite
     })
     .add("Native forEach", () => {
         array.forEach(String);
+    })
+    .add("Async actual async function find", async () => {
+        await find(collection, asyncFunc);
+    })
+    .add("Async find", () => {
+        find(collection, (item: any) => {
+            return item.foo === "bar";
+        });
+    })
+    .add("Lodash find", () => {
+        _.find(collection, (item: any) => {
+            return item.foo === "bar";
+        });
+    })
+    .add("Native find", () => {
+        collection.find((item: any) => {
+            return item.foo === "bar";
+        });
     })
     .on("cycle", function (event: any) {
         console.log(String(event.target));

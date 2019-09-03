@@ -1,3 +1,3 @@
-interface MapOptions {
+declare interface MapOptions {
     isParallel?: boolean;
 }
