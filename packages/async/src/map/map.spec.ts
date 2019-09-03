@@ -1,5 +1,6 @@
 import { expect } from "chai";
 import map from "./map";
+import mapParallel from "./mapParallel";
 
 async function asyncFunc(n: number): Promise<string> {
     return await new Promise((resolve) => {
@@ -32,12 +33,24 @@ describe("Map", () => {
         expect(await map(object, asyncFunc)).to.eql(expected);
     });
 
+    it("should map parallel in collection to a new array", async () => {
+        const object = {
+            "a": 1,
+            "b": 2
+        };
+        const expected = ["1", "2"];
+
+        expect(await mapParallel(array, asyncFunc)).to.eql(expected);
+        expect(await mapParallel(object, asyncFunc)).to.eql(expected);
+    });
+
     it("should work with string shorthands", async () => {
         const objects = [{
             "a": "x"
         }, {
             "a": "y"
         }];
+
         const result = await map(objects, "a");
 
         expect(result).to.eql(["x", "y"]);

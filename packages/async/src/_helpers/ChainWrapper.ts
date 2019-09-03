@@ -1,8 +1,6 @@
 import map from "../map/map";
 import find from "../find/find";
 import castArray from "../castArray/castArray";
-import isAsyncFunction from "../isAsyncFunction/isAsyncFunction";
-import some from "../some/some";
 
 type chainedPromise = {
     operation: Function;
@@ -44,23 +42,7 @@ export default class ChainWrapper {
         return this;
     }
 
-    public value = () => {
-        if (some(this._chainedPromises, (chainedPromise: chainedPromise) => isAsyncFunction(chainedPromise.func))) {
-            return this._valueAsync();
-        }
-
-        let index = -1;
-        const length = this._chainedPromises.length;
-
-        while (++index < length) {
-            const chainedPromises = this._chainedPromises[index];
-            this._value = chainedPromises.operation(this._value, chainedPromises.func);
-        }
-
-        return this._value;
-    }
-
-    private _valueAsync = async (): Promise<any> => {
+    public value = async () => {
         let index = -1;
         const length = this._chainedPromises.length;
 

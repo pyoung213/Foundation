@@ -22,7 +22,7 @@ describe("chain", () => {
             a: true
         }];
 
-        const result = chain(array)
+        const result = await chain(array)
             .find((item: any) => item.id === 2)
             .castArray()
             .map("id")

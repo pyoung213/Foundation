@@ -8,30 +8,6 @@ async function asyncFunc(item: any): Promise<boolean> {
 }
 
 describe("find", () => {
-    it("find with function", () => {
-        const array = [{
-            id: 1,
-            a: false
-        },
-        {
-            id: 2,
-            a: false
-        },
-        {
-            id: 3,
-            a: true
-        }];
-
-        const result = find(array, (item: any) => {
-            return item.id === 2;
-        });
-
-        expect(result).to.eql({
-            id: 2,
-            a: false
-        });
-    });
-
     it("find with async function", async () => {
         const array = [{
             id: 1,
@@ -54,7 +30,7 @@ describe("find", () => {
         });
     });
 
-    it("find with string shorthand", () => {
+    it("find with string shorthand", async () => {
         const array = [{
             id: 1,
             a: false
@@ -68,13 +44,13 @@ describe("find", () => {
             a: true
         }];
 
-        expect(find(array, "a")).to.eql({
+        expect(await find(array, "a")).to.eql({
             id: 3,
             a: true
         });
     });
 
-    it("find with object shorthand", () => {
+    it("find with object shorthand", async () => {
         const array = [{
             id: 1,
             a: false
@@ -93,7 +69,7 @@ describe("find", () => {
             foobar: "bar"
         }];
 
-        const result = find(array, {
+        const result = await find(array, {
             id: 2,
             a: true
         });

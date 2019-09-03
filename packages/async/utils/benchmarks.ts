@@ -27,21 +27,15 @@ const collection = [
     }
 ];
 
-async function asyncFunc(item: any): Promise<boolean> {
-    return await new Promise((resolve) => {
-        resolve(item.id === 2);
-    });
-}
-
 suite
-    .add("Async map object", () => {
-        map(object, "a");
+    .add("Async map object", async () => {
+        await map(object, "a");
     })
     .add("Lodash map object", () => {
         _.map(object, "a");
     })
-    .add("Async map array", () => {
-        map(array, String);
+    .add("Async map array", async () => {
+        await map(array, String);
     })
     .add("Lodash map array", () => {
         _.map(array, String);
@@ -49,8 +43,8 @@ suite
     .add("Native map array", () => {
         array.map(String);
     })
-    .add("Async forEach", () => {
-        forEach(array, String);
+    .add("Async forEach", async () => {
+        await forEach(array, String);
     })
     .add("Lodash forEach", () => {
         _.forEach(array, String);
@@ -58,11 +52,8 @@ suite
     .add("Native forEach", () => {
         array.forEach(String);
     })
-    .add("Async actual async function find", async () => {
-        await find(collection, asyncFunc);
-    })
-    .add("Async find", () => {
-        find(collection, (item: any) => {
+    .add("Async find", async () => {
+        await find(collection, (item: any) => {
             return item.foo === "bar";
         });
     })

@@ -7,10 +7,14 @@ function mapAsync(arrayOrObject: Array<any> | object, property: Function | strin
     const propertyFunc = getMapPredicate(property);
 
     if (isObject(arrayOrObject)) {
-        return mapObject(arrayOrObject, propertyFunc);
+        return mapObject(arrayOrObject, propertyFunc, {
+            isParallel: true
+        });
     }
 
-    return mapArray(arrayOrObject as Array<any>, propertyFunc);
+    return mapArray(arrayOrObject as Array<any>, propertyFunc, {
+        isParallel: true
+    });
 }
 
 export default mapAsync;

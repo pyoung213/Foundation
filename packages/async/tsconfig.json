@@ -22,7 +22,7 @@
     },
     "include": [
         "types/**/*.ts",
-        "./src/**/*.ts",
+        "src/types/**/*.ts",
         "./utils/**/*.ts"
     ],
     "exclude": [

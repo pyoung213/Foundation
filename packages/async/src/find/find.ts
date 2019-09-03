@@ -1,9 +1,8 @@
 import isObject from "../isObject/isObject";
 import isFunction from "../isFunction/isFunction";
 import isString from "../isString/isString";
-import isAsyncFunction from "../isAsyncFunction/isAsyncFunction";
 
-type FindFunction = (value: object, index?: number, obj?: object[]) => boolean;
+type FindFunction = (value: object, index?: number, obj?: object[]) => Promise<boolean> | boolean;
 
 function getPredicate(query: FindFunction | object | string | number): FindFunction {
     switch (true) {
@@ -40,7 +39,9 @@ function getPredicate(query: FindFunction | object | string | number): FindFunct
     }
 }
 
-async function doAsyncFind(collection: Array<object>, asyncFunc: FindFunction): Promise<object | undefined> {
+async function findAsync(collection: Array<object>, predicate: FindFunction | string | object): Promise<object | undefined> {
+    const asyncFunc = getPredicate(predicate);
+
     let index = -1;
     const length = collection.length;
     let result = undefined;
@@ -55,26 +56,4 @@ async function doAsyncFind(collection: Array<object>, asyncFunc: FindFunction): 
     return result;
 }
 
-function find(collection: Array<object>, query: FindFunction | object | string | number): object | undefined | Promise<object | undefined> {
-    if (isAsyncFunction(query)) {
-        return doAsyncFind(collection, query as FindFunction);
-    }
-
-    const predicate = getPredicate(query);
-
-    let index = -1;
-    const length = collection.length;
-    let result;
-
-    while (++index < length) {
-        const item = collection[index];
-        if (predicate(item)) {
-            result = item;
-            break;
-        }
-    }
-
-    return result;
-}
-
-export default find;
+export default findAsync;
