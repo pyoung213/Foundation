@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import isFunction from "./isFunction";
-import testHelpers from "../_helpers/testHelpers";
 
 describe("isFunction", () => {
     it("should detect function.", () => {
@@ -20,7 +19,6 @@ describe("isFunction", () => {
     });
 
     it("should return false for non-functions.", () => {
-        expect(isFunction(testHelpers.toArgs([1, 2, 3]))).to.be.false;
         expect(isFunction(true)).to.be.false;
         expect(isFunction(new Date)).to.be.false;
         expect(isFunction(new Error)).to.be.false;

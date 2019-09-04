@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import isArray from "./isArray";
-import testHelpers from "../_helpers/testHelpers";
 
 describe("isArray", () => {
     it("should detect an array.", () => {
@@ -10,7 +9,6 @@ describe("isArray", () => {
     });
 
     it("should return false for non-arrays.", () => {
-        expect(isArray(testHelpers.toArgs([1, 2, 3]),)).to.be.false;
         expect(isArray(true)).to.be.false;
         expect(isArray(new Date)).to.be.false;
         expect(isArray(new Error)).to.be.false;

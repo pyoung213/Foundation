@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import isObject from "./isObject";
-import testHelpers from "../_helpers/testHelpers";
 
 describe("isObject", () => {
     it("should detect an objects", () => {
@@ -10,7 +9,6 @@ describe("isObject", () => {
         expect(isObject(/x/)).to.be.true;
         expect(isObject(new Error)).to.be.true;
         expect(isObject(new Date)).to.be.true;
-        expect(isObject(testHelpers.toArgs([1, 2, 3]))).to.be.true;
     });
 
     it("should return false for non-objects", () => {

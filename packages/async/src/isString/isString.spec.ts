@@ -1,6 +1,5 @@
 import { expect } from "chai";
 import isString from "./isString";
-import testHelpers from "../_helpers/testHelpers";
 
 describe("isString", () => {
     it("should detect a string", () => {
@@ -14,7 +13,6 @@ describe("isString", () => {
         expect(isString(/x/)).to.be.false;
         expect(isString(new Error)).to.be.false;
         expect(isString(new Date)).to.be.false;
-        expect(isString(testHelpers.toArgs([1, 2, 3]))).to.be.false;
         const asyncFunc = async (): Promise<string> => {
             return "foo";
         };
