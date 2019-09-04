@@ -1,5 +1,6 @@
 import map from "../map/map";
 import find from "../find/find";
+import mapParallel from "../map/mapParallel";
 import filter from "../filter/filter";
 import reject from "../reject/reject";
 import castArray from "../castArray/castArray";
@@ -18,9 +19,35 @@ class ChainWrapper {
         this._chainedPromises = [];
     }
 
+    public castArray = (): ChainWrapper => {
+        this._chainedPromises.push({
+            operation: castArray
+        });
+
+        return this;
+    }
+
     public map = (func: Function): ChainWrapper => {
         this._chainedPromises.push({
             operation: map,
+            func
+        });
+
+        return this;
+    }
+
+    public mapParallel = (func: Function): ChainWrapper => {
+        this._chainedPromises.push({
+            operation: mapParallel,
+            func
+        });
+
+        return this;
+    }
+
+    public filter = (func: Function): ChainWrapper => {
+        this._chainedPromises.push({
+            operation: filter,
             func
         });
 
@@ -40,23 +67,6 @@ class ChainWrapper {
         this._chainedPromises.push({
             operation: reject,
             func
-        });
-
-        return this;
-    }
-
-    public filter = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
-            operation: filter,
-            func
-        });
-
-        return this;
-    }
-
-    public castArray = (): ChainWrapper => {
-        this._chainedPromises.push({
-            operation: castArray
         });
 
         return this;
