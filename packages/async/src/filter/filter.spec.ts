@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import filter from "./filter";
+import filter from "./";
 
 async function asyncFunc(item: any): Promise<boolean> {
     return await new Promise((resolve) => {

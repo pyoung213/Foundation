@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import reject from "./reject";
+import reject from "./";
 
 async function asyncFunc(item: any): Promise<boolean> {
     return await new Promise((resolve) => {

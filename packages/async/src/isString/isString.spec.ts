@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isString from "./isString";
+import isString from "./";
 
 describe("isString", () => {
     it("should detect a string", () => {

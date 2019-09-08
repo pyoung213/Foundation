@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import castArray from "./castArray";
+import castArray from "./";
 
 describe("castArray", () => {
     it("should cast number", () => {

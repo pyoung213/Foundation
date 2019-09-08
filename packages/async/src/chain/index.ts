@@ -1,9 +1,9 @@
-import map from "../map/map";
-import find from "../find/find";
-import mapParallel from "../map/mapParallel";
-import filter from "../filter/filter";
-import reject from "../reject/reject";
-import castArray from "../castArray/castArray";
+import map from "../map";
+import find from "../find";
+import mapParallel from "../mapParallel";
+import filter from "../filter";
+import reject from "../reject";
+import castArray from "../castArray";
 
 type chainedPromise = {
     operation: Function;

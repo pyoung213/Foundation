@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import find from "./find";
+import find from "./";
 
 async function asyncFunc(item: any): Promise<boolean> {
     return await new Promise((resolve) => {

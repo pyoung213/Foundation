@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isFunction from "./isFunction";
+import isFunction from "./";
 
 describe("isFunction", () => {
     it("should detect function.", () => {

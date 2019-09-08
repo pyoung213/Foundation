@@ -1,4 +1,4 @@
-import isString from "../isString/isString";
+import isString from "../isString";
 
 function getAsyncFunc(property: any): Function {
     switch (true) {

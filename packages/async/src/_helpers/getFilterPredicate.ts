@@ -1,6 +1,6 @@
-import isFunction from "../isFunction/isFunction";
-import isObject from "../isObject/isObject";
-import isString from "../isString/isString";
+import isFunction from "../isFunction";
+import isObject from "../isObject";
+import isString from "../isString";
 
 function getFindPredicate(predicate: Function | object | string | number): Function {
     switch (true) {

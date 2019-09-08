@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import chain from "./chain";
+import chain from "./";
 
 async function asyncFunc(item: any): Promise<boolean> {
     return await new Promise((resolve) => {

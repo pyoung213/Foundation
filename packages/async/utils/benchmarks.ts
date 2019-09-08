@@ -1,8 +1,8 @@
 import Benchmark from "benchmark";
 import _ from "lodash";
-import map from "../src/map/map";
-import forEach from "../src/forEach/forEach";
-import find from "../src/find/find";
+import map from "../src/map";
+import forEach from "../src/forEach";
+import find from "../src/find";
 
 const suite = new Benchmark.Suite;
 

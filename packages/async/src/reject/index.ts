@@ -1,4 +1,4 @@
-import filter from "../filter/filter";
+import filter from "../filter";
 import getFindPredicate from "../_helpers/getFilterPredicate";
 import filterObject from "../_helpers/filterObject";
 

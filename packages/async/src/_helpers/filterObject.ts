@@ -1,4 +1,4 @@
-import forEach from "../forEach/forEach";
+import forEach from "../forEach";
 
 async function filterObject(object: object, predicate: Function): Promise<Array<any>> {
     const keys = Object(object).keys(object);
