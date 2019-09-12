@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yarn workspace async lint
+yarn workspace foundation-async lint

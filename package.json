@@ -4,7 +4,8 @@
         "packages/*"
     ],
     "scripts": {
-        "lint": "yarn workspace foundation-async lint",
+        "lint": "bash ./scripts/lint.sh",
+        "test:unit": "bash ./scripts/unit.sh",
         "async:test": "yarn workspace foundation-async test"
     },
     "dependencies": {},
