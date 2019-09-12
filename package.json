@@ -4,6 +4,7 @@
         "packages/*"
     ],
     "scripts": {
+        "lint": "yarn workspace foundation-async lint",
         "async:test": "yarn workspace foundation-async test"
     },
     "dependencies": {},
@@ -20,7 +21,10 @@
         "chai-string": "1.5.0",
         "chai-subset": "1.6.0",
         "eslint": "6.2.2",
+        "eslint-config-prettier": "6.3.0",
+        "eslint-plugin-prettier": "3.1.0",
         "eslint-plugin-switch-case": "1.1.2",
-        "eslint-plugin-vue": "5.2.3"
+        "eslint-plugin-vue": "5.2.3",
+        "prettier": "1.18.2"
     }
 }

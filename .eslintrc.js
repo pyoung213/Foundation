@@ -1,29 +1,31 @@
 module.exports = {
     root: true,
     env: {
-        node: true,
+        node: true
     },
     overrides: [
         {
             files: [
-                "**/*.spec.ts"
+                "**/*.spec.js", "**/*.spec.ts"
             ],
             env: {
                 mocha: true
             }
         }
     ],
+    plugins: [
+        "switch-case"
+    ],
     extends: [
         "plugin:@typescript-eslint/recommended",
         "plugin:vue/essential",
         "plugin:vue/recommended",
-        "@vue/typescript"
-    ],
-    plugins: [
-        "@typescript-eslint",
-        "switch-case"
+        "@vue/typescript",
+        "plugin:prettier/recommended",
+        "prettier/vue",
     ],
     rules: {
+        "@typescript-eslint/no-use-before-define": 0,
         "@typescript-eslint/explicit-function-return-type": [
             "error",
             {
@@ -49,13 +51,6 @@ module.exports = {
         "import/no-extraneous-dependencies": "off",
         "import/no-dynamic-require": "off",
         indent: "off",
-        "@typescript-eslint/indent": [
-            "error",
-            4,
-            {
-                SwitchCase: 1
-            }
-        ],
         "key-spacing": [
             "error",
             {
@@ -106,7 +101,6 @@ module.exports = {
         "no-undef": "error",
         "no-unused-expressions": "off",
         "no-unused-vars": "off",
-        "no-trailing-spaces": "error",
         "@typescript-eslint/no-unused-vars": [
             "error",
             {
@@ -120,18 +114,6 @@ module.exports = {
             {
                 classes: true,
                 functions: false
-            }
-        ],
-        "object-curly-newline": [
-            "error",
-            {
-                ObjectExpression: {
-                    multiline: true,
-                    minProperties: 1
-                },
-                ImportDeclaration: {
-                    minProperties: 3
-                }
             }
         ],
         "object-curly-spacing": [
@@ -163,33 +145,11 @@ module.exports = {
                 allowTemplateLiterals: true,
                 avoidEscape: true
             }
-        ]
-    },
-    "settings": {
-        "import/extensions": [
-            ".js",
-            ".jsx",
-            ".ts",
-            ".tsx"
         ],
-        "import/parsers": {
-            "@typescript-eslint/parser": [
-                ".ts",
-                ".tsx"
-            ]
-        },
-        "import/resolver": {
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
-                ]
-            }
-        }
+        "vue/attribute-hyphenation": 0,
+        "operator-linebreak": 0
     },
     parserOptions: {
         parser: "@typescript-eslint/parser",
-    },
-}
+    }
+};

@@ -15,6 +15,7 @@
         "clean": "rm -rf dist",
         "build": "yarn clean && tsc -p tsconfig.build.json",
         "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
+        "lint": "eslint **/*.ts",
         "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts",
         "prepublish": "yarn build"
     },

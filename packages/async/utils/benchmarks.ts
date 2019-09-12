@@ -4,7 +4,7 @@ import map from "../src/map";
 import forEach from "../src/forEach";
 import find from "../src/find";
 
-const suite = new Benchmark.Suite;
+const suite = new Benchmark.Suite();
 
 const object = {
     a: 1,
@@ -67,9 +67,9 @@ suite
             return item.foo === "bar";
         });
     })
-    .on("cycle", function (event: any) {
+    .on("cycle", function(event: any) {
         console.log(String(event.target));
     })
     .run({
-        "async": true
+        async: true
     });
