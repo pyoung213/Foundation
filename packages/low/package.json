@@ -1,6 +1,6 @@
 {
   "name": "foundation-low",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Low level functions built for speed.",
   "main": "src/index.ts",
   "types": "dist/index.d.ts",
@@ -15,8 +15,7 @@
         "build": "yarn clean && tsc",
         "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
         "lint": "eslint **/*.ts",
-        "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts",
-        "publish": "yarn build && npm publish"
+        "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts"
     },
     "repository": {
         "type": "git",

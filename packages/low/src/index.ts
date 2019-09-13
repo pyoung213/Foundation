@@ -8,6 +8,7 @@ export { default as forEach } from "./forEach";
 export { default as map } from "./map";
 export { default as reject } from "./reject";
 export { default as some } from "./some";
+export { default as forOwn } from "./forOwn";
 
 export { default as isArray } from "./isArray";
 export { default as isFunction } from "./isFunction";

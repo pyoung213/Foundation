@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "src/index.ts",
     "types": "dist/index.d.ts",
     "private": false,
@@ -16,7 +16,7 @@
         "build": "yarn clean && tsc",
         "test": "ts-mocha --watch-extensions ts -p tsconfig.test.json",
         "lint": "eslint **/*.ts",
-        "publish": "yarn build && npm publish"
+        "pre-publish": "yarn build && npm publish"
     },
     "repository": {
         "type": "git",
@@ -29,6 +29,7 @@
     "devDependencies": {
         "chai": "4.2.0",
         "esm": "3.2.25",
+
         "mocha": "6.2.0",
         "sinon": "7.4.1",
         "ts-mocha": "6.0.0",
