@@ -1,26 +1,25 @@
 import map from "../map";
 import find from "../find";
-import mapParallel from "../mapParallel";
 import filter from "../filter";
 import reject from "../reject";
-import { castArray } from "foundation-low";
+import castArray from "../castArray";
 
-type chainedPromise = {
+type chainedFunctions = {
     operation: Function;
     func?: Function;
 };
 
 class ChainWrapper {
-    private _chainedPromises: Array<chainedPromise>;
+    private _chainedFunctions: Array<chainedFunctions>;
     private _value: Array<any> | object;
 
     constructor(value: any) {
         this._value = value;
-        this._chainedPromises = [];
+        this._chainedFunctions = [];
     }
 
     public castArray = (): ChainWrapper => {
-        this._chainedPromises.push({
+        this._chainedFunctions.push({
             operation: castArray
         });
 
@@ -28,7 +27,7 @@ class ChainWrapper {
     };
 
     public map = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
+        this._chainedFunctions.push({
             operation: map,
             func
         });
@@ -36,17 +35,8 @@ class ChainWrapper {
         return this;
     };
 
-    public mapParallel = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
-            operation: mapParallel,
-            func
-        });
-
-        return this;
-    };
-
     public filter = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
+        this._chainedFunctions.push({
             operation: filter,
             func
         });
@@ -55,7 +45,7 @@ class ChainWrapper {
     };
 
     public find = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
+        this._chainedFunctions.push({
             operation: find,
             func
         });
@@ -64,7 +54,7 @@ class ChainWrapper {
     };
 
     public reject = (func: Function): ChainWrapper => {
-        this._chainedPromises.push({
+        this._chainedFunctions.push({
             operation: reject,
             func
         });
@@ -72,15 +62,15 @@ class ChainWrapper {
         return this;
     };
 
-    public value = async () => {
+    public value = () => {
         let index = -1;
-        const length = this._chainedPromises.length;
+        const length = this._chainedFunctions.length;
 
         while (++index < length) {
-            const chainedPromises = this._chainedPromises[index];
-            this._value = await chainedPromises.operation(
+            const chainedFunctions = this._chainedFunctions[index];
+            this._value = chainedFunctions.operation(
                 this._value,
-                chainedPromises.func
+                chainedFunctions.func
             );
         }
 

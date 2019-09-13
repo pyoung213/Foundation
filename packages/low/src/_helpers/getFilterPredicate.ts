@@ -1,4 +1,6 @@
-import { isFunction, isObject, isString } from "foundation-low";
+import isFunction from "../isFunction";
+import isObject from "../isObject";
+import isString from "../isString";
 
 function getFindPredicate(
     predicate: Function | object | string | number

@@ -1,6 +1,6 @@
-import { isString } from "foundation-low";
+import isString from "../isString";
 
-function getAsyncFunc(property: any): Function {
+function getMapPredicate(property: any): Function {
     switch (true) {
         case isString(property):
             return (item: object) => item[property];
@@ -10,4 +10,4 @@ function getAsyncFunc(property: any): Function {
     }
 }
 
-export default getAsyncFunc;
+export default getMapPredicate;

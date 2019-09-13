@@ -2,7 +2,7 @@ import { expect } from "chai";
 import map from "./";
 
 async function asyncFunc(n: number): Promise<string> {
-    return await new Promise((resolve) => {
+    return await new Promise(resolve => {
         resolve(String(n));
     });
 }
@@ -12,8 +12,8 @@ describe("Map", () => {
 
     it("should map values in collection to a new array", async () => {
         const object = {
-            "a": 1,
-            "b": 2
+            a: 1,
+            b: 2
         };
         const expected = ["1", "2"];
 
@@ -23,8 +23,8 @@ describe("Map", () => {
 
     it("should map async values in collection to a new array", async () => {
         const object = {
-            "a": 1,
-            "b": 2
+            a: 1,
+            b: 2
         };
         const expected = ["1", "2"];
 
@@ -33,11 +33,14 @@ describe("Map", () => {
     });
 
     it("should work with string shorthands", async () => {
-        const objects = [{
-            "a": "x"
-        }, {
-            "a": "y"
-        }];
+        const objects = [
+            {
+                a: "x"
+            },
+            {
+                a: "y"
+            }
+        ];
 
         const result = await map(objects, "a");
 

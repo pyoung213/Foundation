@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import castArray from "./";
+import castArray from ".";
 
 describe("castArray", () => {
     it("should cast number", () => {
@@ -9,7 +9,7 @@ describe("castArray", () => {
 
     it("should cast object", () => {
         const test = {
-            "a": 1
+            a: 1
         };
         expect(castArray(test)).to.eql([test]);
     });

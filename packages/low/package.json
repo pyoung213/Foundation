@@ -1,0 +1,36 @@
+{
+  "name": "foundation-low",
+  "version": "0.0.1",
+  "description": "Low level functions built for speed.",
+  "main": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "author": "Patrick Young",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+        "lodash"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "yarn clean && tsc",
+        "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
+        "lint": "eslint **/*.ts",
+        "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts",
+        "publish": "yarn build && npm publish"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pyoung213/Foundation.git",
+        "directory": "packages/low"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "benchmark": "2.1.4",
+        "chai": "4.2.0",
+        "lodash": "4.17.15",
+        "mocha": "6.2.0",
+        "sinon": "7.4.1",
+        "ts-mocha": "6.0.0",
+        "typescript": "3.5.3"
+    }
+}

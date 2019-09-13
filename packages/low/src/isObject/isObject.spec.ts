@@ -1,14 +1,16 @@
 import { expect } from "chai";
-import isObject from "./";
+import isObject from ".";
 
 describe("isObject", () => {
     it("should detect an objects", () => {
-        expect(isObject({
-            "foo": "bar"
-        })).to.be.true;
+        expect(
+            isObject({
+                foo: "bar"
+            })
+        ).to.be.true;
         expect(isObject(/x/)).to.be.true;
-        expect(isObject(new Error)).to.be.true;
-        expect(isObject(new Date)).to.be.true;
+        expect(isObject(new Error())).to.be.true;
+        expect(isObject(new Date())).to.be.true;
     });
 
     it("should return false for non-objects", () => {

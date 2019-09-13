@@ -1,8 +1,11 @@
 import Benchmark from "benchmark";
 import _ from "lodash";
+import get from "../src/get";
 import map from "../src/map";
 import forEach from "../src/forEach";
 import find from "../src/find";
+import filter from "../src/filter";
+import reject from "../src/reject";
 
 const suite = new Benchmark.Suite();
 
@@ -28,32 +31,32 @@ const collection = [
 ];
 
 suite
-    .add("Async map object", async () => {
-        await map(object, "a");
+    .add("Low get object", () => {
+        get(object, "h");
+    })
+    .add("Lodash get object", () => {
+        _.get(object, "h");
+    })
+    .add("Low map object", () => {
+        map(object, "a");
     })
     .add("Lodash map object", () => {
         _.map(object, "a");
     })
-    .add("Async map array", async () => {
-        await map(array, String);
+    .add("Low map array", () => {
+        map(array, String);
     })
     .add("Lodash map array", () => {
         _.map(array, String);
     })
-    .add("Native map array", () => {
-        array.map(String);
-    })
-    .add("Async forEach", async () => {
-        await forEach(array, String);
+    .add("Low forEach", () => {
+        forEach(array, String);
     })
     .add("Lodash forEach", () => {
         _.forEach(array, String);
     })
-    .add("Native forEach", () => {
-        array.forEach(String);
-    })
-    .add("Async find", async () => {
-        await find(collection, (item: any) => {
+    .add("Low find", () => {
+        find(collection, (item: any) => {
             return item.foo === "bar";
         });
     })
@@ -62,14 +65,27 @@ suite
             return item.foo === "bar";
         });
     })
-    .add("Native find", () => {
-        collection.find((item: any) => {
+    .add("Low filter", () => {
+        filter(collection, (item: any) => {
+            return item.foo === "bar";
+        });
+    })
+    .add("Lodash filter", () => {
+        _.filter(collection, (item: any) => {
+            return item.foo === "bar";
+        });
+    })
+    .add("Low reject", () => {
+        reject(collection, (item: any) => {
+            return item.foo === "bar";
+        });
+    })
+    .add("Lodash reject", () => {
+        _.reject(collection, (item: any) => {
             return item.foo === "bar";
         });
     })
     .on("cycle", function(event: any) {
         console.log(String(event.target));
     })
-    .run({
-        async: true
-    });
+    .run();

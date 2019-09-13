@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isFunction from "./";
+import isFunction from ".";
 
 describe("isFunction", () => {
     it("should detect function.", () => {
@@ -20,11 +20,13 @@ describe("isFunction", () => {
 
     it("should return false for non-functions.", () => {
         expect(isFunction(true)).to.be.false;
-        expect(isFunction(new Date)).to.be.false;
-        expect(isFunction(new Error)).to.be.false;
-        expect(isFunction({
-            "foo": "bar"
-        })).to.be.false;
+        expect(isFunction(new Date())).to.be.false;
+        expect(isFunction(new Error())).to.be.false;
+        expect(
+            isFunction({
+                foo: "bar"
+            })
+        ).to.be.false;
         expect(isFunction(1)).to.be.false;
         expect(isFunction(/x/)).to.be.false;
         expect(isFunction("a")).to.be.false;

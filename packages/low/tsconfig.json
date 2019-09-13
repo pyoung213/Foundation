@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "target": "esnext",
-        "module": "esnext",
+        "module": "commonjs",
         "strict": true,
         "declaration": true,
         "moduleResolution": "node",
@@ -16,12 +16,12 @@
             "chai"
         ],
         "lib": [
-            "esnext"
+            "esnext",
+            "dom"
         ]
     },
     "include": [
-        "src/**/*.ts",
-        "./utils/**/*.ts"
+        "src/**/*.ts"
     ],
     "exclude": [
         "node_modules",
