@@ -1,9 +1,9 @@
 import getFindPredicate from "../_helpers/getFilterPredicate";
 
-function find(
-    collection: Array<object>,
+function find<T>(
+    collection: Array<T>,
     predicate: Function | string | object
-): object | undefined {
+): T | undefined {
     const func = getFindPredicate(predicate);
 
     let index = -1;

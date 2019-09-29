@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "main": "src/index.ts",
     "types": "dist/index.d.ts",
     "private": false,
@@ -24,15 +24,15 @@
         "directory": "packages/async"
     },
     "dependencies": {
-        "foundation-low": "0.0.1"
+        "foundation-low": "^0.0.3"
     },
     "devDependencies": {
         "chai": "4.2.0",
         "esm": "3.2.25",
 
         "mocha": "6.2.0",
-        "sinon": "7.4.1",
+        "sinon": "7.5.0",
         "ts-mocha": "6.0.0",
-        "typescript": "3.5.3"
+        "typescript": "^3.6.3"
     }
 }

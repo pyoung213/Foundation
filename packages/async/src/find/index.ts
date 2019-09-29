@@ -1,6 +1,9 @@
 import getFindPredicate from "../_helpers/getFilterPredicate";
 
-async function findAsync(collection: Array<object>, predicate: Function | string | object): Promise<object | undefined> {
+async function findAsync<T>(
+    collection: Array<T>,
+    predicate: Function | string | object
+): Promise<T | undefined> {
     const asyncFunc = getFindPredicate(predicate);
 
     let index = -1;

@@ -1,7 +1,7 @@
 import filterObject from "../_helpers/filterObject";
 import getFindPredicate from "../_helpers/getFilterPredicate";
 
-function doFilter(collection: Array<any>, predicate: Function): Array<any> {
+function doFilter<T>(collection: Array<T>, predicate: Function): Array<T> {
     let index = -1;
     let resIndex = 0;
     const length = collection.length;
@@ -17,10 +17,10 @@ function doFilter(collection: Array<any>, predicate: Function): Array<any> {
     return result;
 }
 
-function filter(
-    collection: Array<any>,
+function filter<T>(
+    collection: Array<T>,
     predicate: Function | object | string
-): Array<any> {
+): Array<T> {
     const predicateFunc = getFindPredicate(predicate);
     const func = Array.isArray(collection) ? doFilter : filterObject;
 

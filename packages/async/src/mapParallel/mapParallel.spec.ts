@@ -2,7 +2,7 @@ import { expect } from "chai";
 import mapParallel from "./";
 
 async function asyncFunc(n: number): Promise<string> {
-    return await new Promise((resolve) => {
+    return await new Promise(resolve => {
         resolve(String(n));
     });
 }
@@ -12,8 +12,8 @@ describe("Map", () => {
 
     it("should map parallel in collection to a new array", async () => {
         const object = {
-            "a": 1,
-            "b": 2
+            a: 1,
+            b: 2
         };
         const expected = ["1", "2"];
 

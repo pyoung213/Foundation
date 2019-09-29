@@ -8,10 +8,10 @@ function negate(predicate: Function) {
     };
 }
 
-function reject(
-    collection: Array<any>,
+function reject<T>(
+    collection: Array<T>,
     predicate: Function | object | string
-): Array<any> {
+): Array<T> {
     const predicateFunc = getFindPredicate(predicate);
     const func = Array.isArray(collection) ? filter : filterObject;
 
