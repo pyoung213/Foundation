@@ -5,6 +5,7 @@ export { default as every } from "./every";
 export { default as filter } from "./filter";
 export { default as find } from "./find";
 export { default as forEach } from "./forEach";
+export { default as get } from "./get";
 export { default as map } from "./map";
 export { default as reject } from "./reject";
 export { default as some } from "./some";

@@ -1,6 +1,6 @@
 {
   "name": "foundation-low",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Low level functions built for speed.",
   "main": "src/index.ts",
   "types": "dist/index.d.ts",
