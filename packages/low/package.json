@@ -1,8 +1,8 @@
 {
   "name": "foundation-low",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Low level functions built for speed.",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "Patrick Young",
   "license": "MIT",
