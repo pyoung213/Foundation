@@ -1,6 +1,6 @@
 {
     "name": "foundation-firebase",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "description": "Wrapper for firebase",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -13,7 +13,8 @@
     "scripts": {
         "clean": "rm -rf dist",
         "build": "yarn clean && tsc",
-        "lint": "eslint **/*.ts"
+        "lint": "eslint **/*.ts",
+        "prepublish": "yarn build"
     },
     "repository": {
         "type": "git",
