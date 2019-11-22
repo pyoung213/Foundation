@@ -1,4 +1,4 @@
-import FirebaseBase from "./firebaseBase";
+import FirebaseBase from "./FirebaseBase";
 
 interface Options {
     db: any;

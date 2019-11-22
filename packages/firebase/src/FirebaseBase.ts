@@ -24,7 +24,7 @@ export default class FirebaseBase<T extends FirebaseBase<T>> {
         return this;
     }
 
-    protected async get(): Promise<Array<any> | any | undefined> {
+    async get(): Promise<Array<any> | any | undefined> {
         const snapshot = await this.chain.get();
 
         return this.getDataFromSnapshot(snapshot);
