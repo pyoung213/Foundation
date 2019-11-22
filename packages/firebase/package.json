@@ -1,0 +1,30 @@
+{
+    "name": "foundation-firebase",
+    "version": "0.0.1",
+    "description": "Wrapper for firebase",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "author": "Patrick Young",
+    "license": "MIT",
+    "private": false,
+    "keywords": [
+        "firebase"
+    ],
+    "scripts": {
+        "clean": "rm -rf dist",
+        "build": "yarn clean && tsc",
+        "lint": "eslint **/*.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pyoung213/Foundation.git",
+        "directory": "packages/firebase"
+    },
+    "dependencies": {
+        "foundation-low": "0.0.5",
+        "vue": "2.6.10"
+    },
+    "devDependencies": {
+        "typescript": "3.7.2"
+    }
+}
