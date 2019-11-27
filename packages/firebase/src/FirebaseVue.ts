@@ -22,7 +22,7 @@ export default class Firebase extends FirebaseBase<Firebase> {
         this.unsubscribe = () => 0;
     }
 
-    async getOnce<T, S>(func: (data: T) => Promise<S> | S): Promise<void> {
+    async getOnce<T, S>(func: (data: T) => Promise<S> | S): Promise<any> {
         let data = await this.get();
         if (func && data) {
             data = await func(data);
@@ -32,7 +32,7 @@ export default class Firebase extends FirebaseBase<Firebase> {
         this.component.$forceUpdate();
     }
 
-    sync(func: Function): void {
+    sync(func: Function): any {
         this.unsubscribe = this.chain.onSnapshot(async (snapshot: any) => {
             let data = this.getDataFromSnapshot(snapshot);
 

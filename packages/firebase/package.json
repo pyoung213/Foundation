@@ -12,7 +12,7 @@
     ],
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "yarn clean && tsc",
+        "build": "tsc",
         "lint": "eslint **/*.ts",
         "prepublish": "yarn build"
     },
