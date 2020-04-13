@@ -1,6 +1,6 @@
-import forEach from "../forEach";
+import { forEach } from "../forEach/forEach";
 
-function filterObject(object: object, predicate: Function): Array<any> {
+export function filterObject(object: object, predicate: Function): Array<any> {
     const keys = Object(object).keys(object);
     const result = [] as Array<any>;
 
@@ -13,5 +13,3 @@ function filterObject(object: object, predicate: Function): Array<any> {
 
     return result;
 }
-
-export default filterObject;

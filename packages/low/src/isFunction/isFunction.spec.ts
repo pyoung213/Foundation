@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isFunction from ".";
+import { isFunction } from "./isFunction";
 
 describe("isFunction", () => {
     it("should detect function.", () => {
@@ -9,7 +9,7 @@ describe("isFunction", () => {
 
         expect(isFunction(test)).to.be.true;
         const promiseFunc = (): Promise<string> => {
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
                 resolve("foo");
             });
         };

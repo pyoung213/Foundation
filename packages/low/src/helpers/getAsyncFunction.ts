@@ -1,6 +1,6 @@
-import isString from "../isString";
+import { isString } from "../isString/isString";
 
-function getMapPredicate(property: any): Function {
+export function getAsyncFunction(property: any): Function {
     switch (true) {
         case isString(property):
             return (item: object) => item[property];
@@ -9,5 +9,3 @@ function getMapPredicate(property: any): Function {
             return property;
     }
 }
-
-export default getMapPredicate;

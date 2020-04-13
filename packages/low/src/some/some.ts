@@ -1,4 +1,4 @@
-function some(array: Array<any>, predicate: Function): boolean {
+export function some(array: Array<any>, predicate: Function): boolean {
     let index = -1;
     const length = array == null ? 0 : array.length;
 
@@ -10,5 +10,3 @@ function some(array: Array<any>, predicate: Function): boolean {
 
     return false;
 }
-
-export default some;

@@ -1,4 +1,4 @@
-const mapObject = (object: object, func: Function): Array<any> => {
+export const mapObject = (object: object, func: Function): Array<any> => {
     let index = -1;
     const keys = Object.keys(object);
 
@@ -9,5 +9,3 @@ const mapObject = (object: object, func: Function): Array<any> => {
 
     return result;
 };
-
-export default mapObject;

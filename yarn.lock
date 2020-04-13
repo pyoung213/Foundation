@@ -77,6 +77,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/benchmark@npm:^1.0.31":
+  version: 1.0.31
+  resolution: "@types/benchmark@npm:1.0.31"
+  checksum: 2/306c4addf2494d06316e1cd434897541d985c13dc3495569932b1d178c10c05bf948e7f74d296bf6ea15d49834136687cb43878c64e931d200874375135cba3d
+  languageName: node
+  linkType: hard
+
 "@types/chai@npm:^4.2.11":
   version: 4.2.11
   resolution: "@types/chai@npm:4.2.11"
@@ -116,6 +123,13 @@ __metadata:
   version: 0.0.29
   resolution: "@types/json5@npm:0.0.29"
   checksum: 2/66e9ac0143ec521522c7bb670301e9836ee886207eeed1aab6d4854a1b19b404ab3a54cd8d449f9b1f13acc357f540be96f8ac2d1e86e301eab52ae0f9a4066f
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:^4.14.149":
+  version: 4.14.149
+  resolution: "@types/lodash@npm:4.14.149"
+  checksum: 2/f5b8837c776d471755f8d48536933031e5753da4277d1e5a0ebd46caf392adc2a298eeb2812f2da8d1801fa1c666c9112207204e73e06c11bdcf1bf179f304fa
   languageName: node
   linkType: hard
 
@@ -375,6 +389,13 @@ __metadata:
     delegates: ^1.0.0
     readable-stream: ^2.0.6
   checksum: 2/2d6fdb0ddde9b8cb120b6851b42c75f6b6db78b540b579a00d144ad38cb9e1bdf1248e5454049fcf5b47ef61d1a6f2ea433a8e38984158afd441bc1e0db7a625
+  languageName: node
+  linkType: hard
+
+"arg@npm:^4.1.0":
+  version: 4.1.3
+  resolution: "arg@npm:4.1.3"
+  checksum: 2/81b3b40b1529c4fbf75b12f7c3e6fb2dcce9e78072063babc169de9b4f40777788f3d2b04380f659ef676a756e03ccfbfe78adf4477353bda906295fa69dab89
   languageName: node
   linkType: hard
 
@@ -808,7 +829,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"diff@npm:^4.0.2":
+"diff@npm:^4.0.1, diff@npm:^4.0.2":
   version: 4.0.2
   resolution: "diff@npm:4.0.2"
   checksum: 2/81b5cd7ddde6f0ba2a532d434cfdca365aedd6cc62bb133e851e66e071d40382a30924a07c1034bd3d5a2e332146f64514b73c06fe2ebc0490a67f0c98da79fb
@@ -1264,14 +1285,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "foundation-low@workspace:packages/low"
   dependencies:
+    "@types/benchmark": ^1.0.31
     "@types/chai": ^4.2.11
+    "@types/lodash": ^4.14.149
     "@types/mocha": ^7.0.2
     benchmark: 2.1.4
     chai: 4.2.0
-    lodash: 4.17.15
+    lodash: ^4.17.15
     mocha: 7.1.1
     sinon: 9.0.2
     ts-mocha: 7.0.0
+    ts-node: ^8.8.2
     typescript: 3.8.3
   languageName: unknown
   linkType: soft
@@ -1876,7 +1900,7 @@ fsevents@~2.1.1:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.15, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
+"lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.4":
   version: 4.17.15
   resolution: "lodash@npm:4.17.15"
   checksum: 2/aec3fbb7570aa67bda500b8299b1b1821d60646bede87f76a74dfcc7666ab3445267d734ec71424d70809d52ad67a1356fab5ab694a3faa1908d68e9d48f00f5
@@ -3118,6 +3142,26 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
+"ts-node@npm:^8.8.2":
+  version: 8.8.2
+  resolution: "ts-node@npm:8.8.2"
+  dependencies:
+    arg: ^4.1.0
+    diff: ^4.0.1
+    make-error: ^1.1.1
+    source-map-support: ^0.5.6
+    yn: 3.1.1
+  peerDependencies:
+    typescript: ">=2.7"
+  bin:
+    ts-node: dist/bin.js
+    ts-node-script: dist/bin-script.js
+    ts-node-transpile-only: dist/bin-transpile.js
+    ts-script: dist/bin-script-deprecated.js
+  checksum: 2/fbbb4a795bd3ceca5b77fa680bae16cf313a35f0de80db032f0cd6f39aa4deb26bab43b0a62f00eb6a3e78fdd49951e220fc14a33d7fb590f812157168eb744f
+  languageName: node
+  linkType: hard
+
 "tsconfig-paths@npm:^3.5.0":
   version: 3.9.0
   resolution: "tsconfig-paths@npm:3.9.0"
@@ -3401,6 +3445,13 @@ resolve@^1.10.0:
     y18n: ^4.0.0
     yargs-parser: ^13.1.2
   checksum: 2/92c612cd14a9217d7421ae4f42bc7c460472633bfc2e45f7f86cd614a61a845670d3bac7c2228c39df7fcecce0b8c12b2af65c785b1f757de974dcf84b5074f9
+  languageName: node
+  linkType: hard
+
+"yn@npm:3.1.1":
+  version: 3.1.1
+  resolution: "yn@npm:3.1.1"
+  checksum: 2/bff63b80568d80c711670935427494dde47cdf97e8b04196b140ce0af519c81c5ee857eddad0caa8b422dd65aea0157bbfaacbb1546bebba623f0f383d5d9ae5
   languageName: node
   linkType: hard
 

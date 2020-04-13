@@ -1,4 +1,4 @@
-function forEach(array: Array<any>, func: Function): void {
+export function forEach(array: Array<any>, func: Function): void {
     let index = -1;
     const length = array.length;
 
@@ -8,5 +8,3 @@ function forEach(array: Array<any>, func: Function): void {
         }
     }
 }
-
-export default forEach;

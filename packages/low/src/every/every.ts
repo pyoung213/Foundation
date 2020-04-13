@@ -1,4 +1,4 @@
-function every(array: Array<any>, predicate: Function): boolean {
+export function every(array: Array<any>, predicate: Function): boolean {
     let index = -1;
     const length = array == null ? 0 : array.length;
 
@@ -10,5 +10,3 @@ function every(array: Array<any>, predicate: Function): boolean {
 
     return true;
 }
-
-export default every;

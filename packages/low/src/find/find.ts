@@ -1,6 +1,6 @@
-import getFindPredicate from "../_helpers/getFilterPredicate";
+import { getFindPredicate } from "../helpers/getFilterPredicate";
 
-function find<T>(
+export function find<T>(
     collection: Array<T>,
     predicate: Function | string | object
 ): T | undefined {
@@ -19,5 +19,3 @@ function find<T>(
 
     return result;
 }
-
-export default find;

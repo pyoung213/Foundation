@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import reject from ".";
+import { reject } from "./reject";
 
 describe("reject", () => {
     it("reject with function", () => {

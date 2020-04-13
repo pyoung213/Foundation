@@ -1,4 +1,4 @@
-const mapArray = (array: Array<any>, func: Function): Array<any> => {
+export const mapArray = (array: Array<any>, func: Function): Array<any> => {
     let index = -1;
     const length = array == null ? 0 : array.length;
     const result = new Array(length);
@@ -9,5 +9,3 @@ const mapArray = (array: Array<any>, func: Function): Array<any> => {
 
     return result;
 };
-
-export default mapArray;

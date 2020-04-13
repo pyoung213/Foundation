@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import map from ".";
+import { map } from "./map";
 
 describe("Map", () => {
     const array = [1, 2];

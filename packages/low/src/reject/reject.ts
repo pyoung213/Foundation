@@ -1,6 +1,6 @@
-import filter from "../filter";
-import getFindPredicate from "../_helpers/getFilterPredicate";
-import filterObject from "../_helpers/filterObject";
+import { filter } from "../filter/filter";
+import { getFindPredicate } from "../helpers/getFilterPredicate";
+import { filterObject } from "../helpers/filterObject";
 
 function negate(predicate: Function) {
     return (func: Function) => {
@@ -8,7 +8,7 @@ function negate(predicate: Function) {
     };
 }
 
-function reject<T>(
+export function reject<T>(
     collection: Array<T>,
     predicate: Function | object | string
 ): Array<T> {
@@ -17,5 +17,3 @@ function reject<T>(
 
     return func(collection, negate(predicateFunc));
 }
-
-export default reject;

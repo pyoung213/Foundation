@@ -1,8 +1,8 @@
-import isFunction from "../isFunction";
-import isObject from "../isObject";
-import isString from "../isString";
+import { isFunction } from "../isFunction/isFunction";
+import { isObject } from "../isObject/isObject";
+import { isString } from "../isString/isString";
 
-function getFindPredicate(
+export function getFindPredicate(
     predicate: Function | object | string | number
 ): Function {
     switch (true) {
@@ -38,5 +38,3 @@ function getFindPredicate(
             return predicate as Function;
     }
 }
-
-export default getFindPredicate;

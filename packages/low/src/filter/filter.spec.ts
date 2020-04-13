@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import filter from ".";
+import { filter } from "./filter";
 
 describe("filter", () => {
     it("filter with function", () => {

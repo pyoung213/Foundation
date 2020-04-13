@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import find from ".";
+import { find } from "./find";
 
 describe("find", () => {
     it("find with function", () => {

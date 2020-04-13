@@ -1,4 +1,4 @@
-function isFunction(value: any): boolean {
+export function isFunction(value: any): boolean {
     const tag = toString.call(value);
 
     return (
@@ -8,5 +8,3 @@ function isFunction(value: any): boolean {
         tag == "[object Proxy]"
     );
 }
-
-export default isFunction;

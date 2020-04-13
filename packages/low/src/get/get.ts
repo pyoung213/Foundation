@@ -1,4 +1,4 @@
-import forEach from "../forEach";
+import { forEach } from "../forEach/forEach";
 
 const charCodeOfDot = ".".charCodeAt(0);
 const reEscapeChar = /\\(\\)?/g;
@@ -43,7 +43,11 @@ const stringToPath = (string: string): Array<string> => {
     return result;
 };
 
-function get(object: Record<string, any>, string: string, fallback?: any): any {
+export function get(
+    object: Record<string, any>,
+    string: string,
+    fallback?: any
+): any {
     const splitString = stringToPath(string);
     let value = object;
 
@@ -58,5 +62,3 @@ function get(object: Record<string, any>, string: string, fallback?: any): any {
 
     return value;
 }
-
-export default get;

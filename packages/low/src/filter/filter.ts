@@ -1,5 +1,5 @@
-import filterObject from "../_helpers/filterObject";
-import getFindPredicate from "../_helpers/getFilterPredicate";
+import { filterObject } from "../helpers/filterObject";
+import { getFindPredicate } from "../helpers/getFilterPredicate";
 
 function doFilter<T>(collection: Array<T>, predicate: Function): Array<T> {
     let index = -1;
@@ -17,7 +17,7 @@ function doFilter<T>(collection: Array<T>, predicate: Function): Array<T> {
     return result;
 }
 
-function filter<T>(
+export function filter<T>(
     collection: Array<T>,
     predicate: Function | object | string
 ): Array<T> {
@@ -26,5 +26,3 @@ function filter<T>(
 
     return func(collection, predicateFunc);
 }
-
-export default filter;

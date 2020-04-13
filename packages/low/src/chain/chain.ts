@@ -1,8 +1,8 @@
-import map from "../map";
-import find from "../find";
-import filter from "../filter";
-import reject from "../reject";
-import castArray from "../castArray";
+import { map } from "../map/map";
+import { find } from "../find/find";
+import { filter } from "../filter/filter";
+import { reject } from "../reject/reject";
+import { castArray } from "../castArray/castArray";
 
 type chainedFunctions = {
     operation: Function;
@@ -62,7 +62,7 @@ class ChainWrapper {
         return this;
     };
 
-    public value = () => {
+    public value = (): any => {
         let index = -1;
         const length = this._chainedFunctions.length;
 
@@ -78,8 +78,6 @@ class ChainWrapper {
     };
 }
 
-function chain(value: any): any {
+export function chain(value: any): any {
     return new ChainWrapper(value);
 }
-
-export default chain;

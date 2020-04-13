@@ -1,4 +1,4 @@
-function isString(value: any): boolean {
+export function isString(value: any): boolean {
     const type = typeof value;
 
     return (
@@ -9,5 +9,3 @@ function isString(value: any): boolean {
             toString.call(value) == "[object String]")
     );
 }
-
-export default isString;

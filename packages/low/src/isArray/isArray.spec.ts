@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isArray from ".";
+import { isArray } from "./isArray";
 
 describe("isArray", () => {
     it("should detect an array.", () => {
