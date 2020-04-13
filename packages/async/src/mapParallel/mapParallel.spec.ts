@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import mapParallel from "./";
+import { mapParallel } from "./mapParallel";
 
 async function asyncFunc(n: number): Promise<string> {
     return await new Promise(resolve => {

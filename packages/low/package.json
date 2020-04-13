@@ -2,34 +2,37 @@
   "name": "foundation-low",
   "version": "0.0.5",
   "description": "Low level functions built for speed.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.ts",
   "author": "Patrick Young",
   "license": "MIT",
-  "private": false,
   "keywords": [
-        "lodash"
-    ],
-    "scripts": {
-        "clean": "rm -rf dist",
-        "build": "yarn clean && tsc",
-        "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
-        "lint": "eslint **/*.ts",
-        "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/pyoung213/Foundation.git",
-        "directory": "packages/low"
-    },
-    "dependencies": {},
-    "devDependencies": {
-        "benchmark": "2.1.4",
-        "chai": "4.2.0",
-        "lodash": "4.17.15",
-        "mocha": "6.2.2",
-        "sinon": "7.5.0",
-        "ts-mocha": "6.0.0",
-        "typescript": "3.7.2"
-    }
+    "lodash"
+  ],
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts"
+  },
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc",
+    "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
+    "lint": "eslint **/*.ts",
+    "benchmarks": "ts-node --transpileOnly utils/benchmarks.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyoung213/Foundation.git",
+    "directory": "packages/low"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.11",
+    "@types/mocha": "^7.0.2",
+    "benchmark": "2.1.4",
+    "chai": "4.2.0",
+    "lodash": "4.17.15",
+    "mocha": "7.1.1",
+    "sinon": "9.0.2",
+    "ts-mocha": "7.0.0",
+    "typescript": "3.8.3"
+  }
 }

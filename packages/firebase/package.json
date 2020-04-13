@@ -6,7 +6,6 @@
     "types": "dist/index.d.ts",
     "author": "Patrick Young",
     "license": "MIT",
-    "private": false,
     "keywords": [
         "firebase"
     ],
@@ -22,10 +21,10 @@
         "directory": "packages/firebase"
     },
     "dependencies": {
-        "foundation-low": "0.0.5",
-        "vue": "2.6.10"
+        "foundation-low": "workspace:*",
+        "vue": "2.6.11"
     },
     "devDependencies": {
-        "typescript": "3.7.2"
+        "typescript": "3.8.3"
     }
 }

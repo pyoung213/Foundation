@@ -1,6 +1,7 @@
 node_modules
 yarn-error.log
 dist
+.yarn
 
 #OS STUFF
 .DS_Store
