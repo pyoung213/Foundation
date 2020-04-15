@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { asyncReject } from "./asyncReject";
 
 async function asyncFunc(item: any): Promise<boolean> {
-    return await new Promise(resolve => {
+    return await new Promise((resolve) => {
         resolve(item.id === 2);
     });
 }

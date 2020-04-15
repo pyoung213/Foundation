@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { asyncFind } from "./asyncFind";
 
 async function asyncFunc(item: any): Promise<boolean> {
-    return await new Promise(resolve => {
+    return await new Promise((resolve) => {
         resolve(item.id === 2);
     });
 }

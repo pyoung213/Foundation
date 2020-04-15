@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { asyncMap } from "./asyncMap";
 
 async function asyncFunc(n: number): Promise<string> {
-    return await new Promise(resolve => {
+    return await new Promise((resolve) => {
         resolve(String(n));
     });
 }

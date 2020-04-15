@@ -1,4 +1,4 @@
-import { isString } from "foundation-low"; 
+import { isString } from "foundation-low";
 
 export function getAsyncFunction(property: any): Function {
     switch (true) {

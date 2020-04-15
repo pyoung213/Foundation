@@ -9,7 +9,7 @@ export const mapObject = async (
     const keys = Object.keys(object);
 
     if (options.isParallel) {
-        const promises = keys.map(key => asyncFunc(object[key], key, object));
+        const promises = keys.map((key) => asyncFunc(object[key], key, object));
 
         return Promise.all(promises);
     }
