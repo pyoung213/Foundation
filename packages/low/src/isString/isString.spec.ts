@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import isString from ".";
+import { isString } from "./isString";
 
 describe("isString", () => {
     it("should detect a string", () => {
@@ -21,7 +21,7 @@ describe("isString", () => {
         expect(isString(asyncFunc)).to.be.false;
 
         const promiseFunc = (): Promise<string> => {
-            return new Promise(resolve => {
+            return new Promise((resolve) => {
                 resolve("foo");
             });
         };

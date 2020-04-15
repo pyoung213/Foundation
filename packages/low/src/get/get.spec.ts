@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import get from ".";
+import { get } from "./get";
 
 describe("get", () => {
     it("should get one level", () => {

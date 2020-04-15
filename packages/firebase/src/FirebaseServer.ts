@@ -1,10 +1,10 @@
-import FirebaseBase from "./FirebaseBase";
+import { FirebaseBase } from "./FirebaseBase";
 
 interface Options {
     db: any;
 }
 
-export default class Firebase extends FirebaseBase<Firebase> {
+export class FirebaseServer extends FirebaseBase<FirebaseServer> {
     constructor(options: Options) {
         super({
             db: options.db

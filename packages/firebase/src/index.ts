@@ -1,2 +1,3 @@
-export { default as FirebaseServer } from "./FirebaseServer";
-export { default as FirebaseVue } from "./FirebaseVue";
+export { FirebaseServer } from "./FirebaseServer";
+export { FirebaseVue } from "./FirebaseVue";
+export { FirebaseBase } from "./FirebaseBase";

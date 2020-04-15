@@ -1,15 +1,18 @@
 {
     "name": "foundation-firebase",
-    "version": "0.0.5",
+    "version": "0.1.0",
     "description": "Wrapper for firebase",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "src/index.ts",
     "author": "Patrick Young",
     "license": "MIT",
-    "private": false,
     "keywords": [
         "firebase"
     ],
+    "publishConfig": {
+        "main": "./dist/index.js",
+        "typings": "./dist/index.d.ts",
+        "registry": "https://npm.pkg.github.com/"
+    },
     "scripts": {
         "clean": "rm -rf dist",
         "build": "tsc",
@@ -22,10 +25,10 @@
         "directory": "packages/firebase"
     },
     "dependencies": {
-        "foundation-low": "0.0.5",
-        "vue": "2.6.10"
+        "foundation-low": "workspace:*",
+        "vue": "^2.6.11"
     },
     "devDependencies": {
-        "typescript": "3.7.2"
+        "typescript": "^3.8.3"
     }
 }

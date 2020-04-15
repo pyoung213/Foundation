@@ -1,5 +1,5 @@
 import Vue from "vue";
-import FirebaseBase from "./FirebaseBase";
+import { FirebaseBase } from "./FirebaseBase";
 
 interface Options {
     db: any;
@@ -7,7 +7,7 @@ interface Options {
     key: string;
 }
 
-export default class Firebase extends FirebaseBase<Firebase> {
+export class FirebaseVue extends FirebaseBase<FirebaseVue> {
     private component: Record<string, any>;
     private key: string;
     public unsubscribe: () => void;

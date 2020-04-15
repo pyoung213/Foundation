@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import chain from ".";
+import { chain } from "./chain";
 
 describe("chain", () => {
     it("should chain functions", async () => {

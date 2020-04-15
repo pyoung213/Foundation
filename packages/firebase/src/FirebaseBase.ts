@@ -4,7 +4,7 @@ interface Options {
     db: any;
 }
 
-export default class FirebaseBase<T extends FirebaseBase<T>> {
+export class FirebaseBase<T extends FirebaseBase<T>> {
     protected db: any;
     protected chain: any;
 

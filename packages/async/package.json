@@ -1,9 +1,7 @@
 {
     "name": "foundation-async",
-    "version": "0.1.3",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
-    "private": false,
+    "version": "0.2.0",
+    "main": "src/index.ts",
     "license": "MIT",
     "description": "Utility modules for async functions.",
     "author": "Patrick Young",
@@ -11,10 +9,15 @@
         "async",
         "lodash"
     ],
+    "publishConfig": {
+        "main": "./dist/index.js",
+        "typings": "./dist/index.d.ts",
+        "registry": "https://npm.pkg.github.com/"
+    },
     "scripts": {
         "clean": "rm -rf dist",
         "build": "yarn clean && tsc",
-        "test": "ts-mocha --watch-extensions ts -p tsconfig.test.json",
+        "test": "ts-mocha --watch-extensions ts",
         "lint": "eslint **/*.ts",
         "pre-publish": "yarn build && npm publish"
     },
@@ -24,15 +27,9 @@
         "directory": "packages/async"
     },
     "dependencies": {
-        "foundation-low": "^0.0.3"
+        "foundation-low": "workspace:*"
     },
     "devDependencies": {
-        "chai": "4.2.0",
-        "esm": "3.2.25",
-
-        "mocha": "6.2.0",
-        "sinon": "7.5.0",
-        "ts-mocha": "6.0.0",
-        "typescript": "^3.6.3"
+        "typescript": "^3.8.3"
     }
 }

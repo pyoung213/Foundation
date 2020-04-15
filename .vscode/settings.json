@@ -1,23 +1,29 @@
 {
-    "eslint.validate": [
-        {
-            "language": "vue",
-            "autoFix": true
-        },
-        {
-            "language": "javascript",
-            "autoFix": true
-        },
-        {
-            "language": "javascriptreact",
-            "autoFix": true
-        },
-        {
-            "language": "typescript",
-            "autoFix": true
-        }
-    ],
-    "eslint.autoFixOnSave": true,
-    "editor.formatOnSave": false,
-    "vetur.validation.template": true
+  "eslint.validate": [
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    {
+      "language": "javascript",
+      "autoFix": true
+    },
+    {
+      "language": "javascriptreact",
+      "autoFix": true
+    },
+    {
+      "language": "typescript",
+      "autoFix": true
+    }
+  ],
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": false,
+  "vetur.validation.template": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.nodePath": ".vscode/pnpify",
+  "prettier.prettierPath": ".vscode/pnpify/prettier/index.js",
+  "typescript.tsdk": ".vscode/pnpify/typescript/lib"
 }

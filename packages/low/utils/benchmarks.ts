@@ -1,11 +1,11 @@
 import Benchmark from "benchmark";
 import _ from "lodash";
-import get from "../src/get";
-import map from "../src/map";
-import forEach from "../src/forEach";
-import find from "../src/find";
-import filter from "../src/filter";
-import reject from "../src/reject";
+import { get } from "../src/get/get";
+import { map } from "../src/map/map";
+import { forEach } from "../src/forEach/forEach";
+import { find } from "../src/find/find";
+import { filter } from "../src/filter/filter";
+import { reject } from "../src/reject/reject";
 
 const suite = new Benchmark.Suite();
 
@@ -85,7 +85,7 @@ suite
             return item.foo === "bar";
         });
     })
-    .on("cycle", function(event: any) {
+    .on("cycle", function (event: any) {
         console.log(String(event.target));
     })
     .run();
