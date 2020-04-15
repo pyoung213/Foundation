@@ -22,9 +22,9 @@
     },
     "dependencies": {
         "foundation-low": "workspace:*",
-        "vue": "2.6.11"
+        "vue": "^2.6.11"
     },
     "devDependencies": {
-        "typescript": "3.8.3"
+        "typescript": "^3.8.3"
     }
 }
