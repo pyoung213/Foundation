@@ -28,8 +28,5 @@
     },
     "dependencies": {
         "foundation-low": "workspace:*"
-    },
-    "devDependencies": {
-        "typescript": "^3.8.3"
     }
 }
