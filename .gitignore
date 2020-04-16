@@ -1,7 +1,9 @@
 node_modules
 yarn-error.log
 dist
-.yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/install-state**
 
 #OS STUFF
 .DS_Store
