@@ -15,12 +15,12 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    
+
     - run: npm install -g yarn
-    
+
     - name: Install Dependencies
     - run: yarn
-  
+
     - name: Lint
     - run: yarn lint
 
@@ -29,6 +29,3 @@ jobs:
 
     - name: Test
     - run: yarn test
-      
-      env:
-        CI: true
