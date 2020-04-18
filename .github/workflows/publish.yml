@@ -13,12 +13,12 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       
-      - name: Wait for build to succeed
+      - name: Wait for tests to succeed
         uses: fountainhead/action-wait-for-check@v1.0.0
         id: wait-for-tests
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: test
+          checkName: CI
           ref: github.event.pull_request.head.sha || github.sha
 
       - name: Check test failure
