@@ -11,7 +11,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       
       - name: Wait for tests to succeed
         uses: fountainhead/action-wait-for-check@v1.0.0
@@ -19,7 +19,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           checkName: CI
-          ref: github.event.pull_request.head.sha || github.sha
 
       - name: Check test failure
         if: steps.wait-for-tests.outputs.conclusion == 'failure'
