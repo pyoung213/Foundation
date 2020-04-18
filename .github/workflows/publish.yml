@@ -5,25 +5,17 @@ name: Publish
 #     paths:
 #       - 'packages/async/**'
 
-on: [push]
+# on: [push]
+
+on: 
+  repository_dispatch:
+    types: [tests-passed]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      
-      - name: Wait for tests to succeed
-        uses: fountainhead/action-wait-for-check@v1.0.0
-        id: wait-for-tests
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: test
-
-      - name: Check test failure
-        if: steps.wait-for-tests.outputs.conclusion == 'failure'
-        run: exit 1
-
       - uses: actions/setup-node@v1
         with:
           node-version: 10

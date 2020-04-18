@@ -29,3 +29,9 @@ jobs:
     - run: yarn build
 
     - run: yarn test
+
+    - name: Dispatch Success
+      uses: peter-evans/repository-dispatch@v1
+      with:
+        token: ${{ secrets.REPO_ACCESS_TOKEN }}
+        event-type: tests-passed
