@@ -35,3 +35,4 @@ jobs:
       with:
         token: ${{ secrets.REPO_ACCESS_TOKEN }}
         event-type: tests-passed
+        client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}"}'
