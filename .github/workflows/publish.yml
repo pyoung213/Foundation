@@ -7,9 +7,9 @@ name: Publish
 
 # on: [push]
 
-on: 
+on:
   repository_dispatch:
-    types: [tests-passed]
+    types: [tests]
 
 jobs:
   publish:
@@ -31,3 +31,5 @@ jobs:
       - run: yarn build
 
       - run: yarn lint
+
+      
