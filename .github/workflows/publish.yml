@@ -4,9 +4,6 @@ on:
   push:
     paths:
       - 'packages/async/**'
-      - 'async/**'
-      - 'packages/async/**'
-      - 'async/*'
 
 jobs:
   publish:
