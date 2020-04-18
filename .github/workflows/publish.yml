@@ -1,15 +1,30 @@
 name: Publish
 
-on:
-  push:
-    paths:
-      - 'packages/async/**'
+# on:
+#   push:
+#     paths:
+#       - 'packages/async/**'
+
+on: [push]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-tests
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: test
+          ref: github.event.pull_request.head.sha || github.sha
+
+      - name: Check test failure
+        if: steps.wait-for-tests.outputs.conclusion == 'failure'
+        run: exit 1
+
       - uses: actions/setup-node@v1
         with:
           node-version: 10
