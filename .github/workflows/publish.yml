@@ -1,9 +1,10 @@
-name: Release
+name: Publish
 
 on:
   push:
     paths:
-      - 'packages/async/*'
+      - 'packages/async/**'
+      - 'async/**'
 
 jobs:
   publish:
@@ -20,8 +21,3 @@ jobs:
       - run: yarn build
 
       - run: yarn lint
-
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
