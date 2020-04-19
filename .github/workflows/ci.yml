@@ -20,8 +20,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - run: npm install yarn
-
     - run: yarn
 
     - run: yarn lint
@@ -42,8 +40,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-
-    - run: npm install yarn
 
     - run: yarn
 
