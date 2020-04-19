@@ -1,33 +1,29 @@
 name: Publish
 
+on: [push]
+
 # on:
-#   push:
-#     paths:
-#       - 'packages/async/**'
-
-# on: [push]
-
-on:
-  repository_dispatch:
-    types: [tests]
+#   pull_request:
+#     branches:
+#       - master
+#     types: [closed]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.client_payload.ref }}
-      - run: echo ${{ github.event.client_payload.sha }}
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 10
+        registry-url: 'https://npm.pkg.github.com'
 
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10
+    - run: yarn install
 
-      - run: npm install yarn
+    - run: yarn build
 
-      - run: yarn
-
-      - run: yarn lint
-
-      
+    - name: Publish
+    - run: yarn publish:async
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
