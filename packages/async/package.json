@@ -18,7 +18,7 @@
         "build": "yarn clean && tsc",
         "test": "ts-mocha --watch-extensions ts",
         "lint": "eslint **/*.ts",
-        "publish": "npm publish --access public"
+        "publish": "yarn publish"
     },
     "repository": {
         "type": "git",
