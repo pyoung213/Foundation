@@ -7,4 +7,5 @@ export { asyncForEach } from "./asyncForEach/asyncForEach";
 export { asyncMap } from "./asyncMap/asyncMap";
 export { mapParallel } from "./mapParallel/mapParallel";
 export { asyncReject } from "./asyncReject/asyncReject";
+
 export { asyncSome } from "./asyncSome/asyncSome";

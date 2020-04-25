@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.2.0",
+    "version": "0.1.4",
     "main": "src/index.ts",
     "license": "MIT",
     "description": "Utility modules for async functions.",
@@ -11,15 +11,14 @@
     ],
     "publishConfig": {
         "main": "./dist/index.js",
-        "typings": "./dist/index.d.ts",
-        "registry": "https://npm.pkg.github.com/"
+        "typings": "./dist/index.d.ts"
     },
     "scripts": {
         "clean": "rm -rf dist",
         "build": "yarn clean && tsc",
         "test": "ts-mocha --watch-extensions ts",
         "lint": "eslint **/*.ts",
-        "pre-publish": "yarn build && npm publish"
+        "publish": "npm publish"
     },
     "repository": {
         "type": "git",

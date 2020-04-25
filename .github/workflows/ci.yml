@@ -3,13 +3,11 @@ name: CI
 on: [push]
 
 jobs:
-  test:
-    name: Test node ${{ matrix.node }} and ${{ matrix.os }}
+  lint:
+    name: lint ${{ matrix.node }} ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
 
     strategy:
-      fail-fast: false
       matrix:
         node: [10.x]
         os: [ubuntu-latest]
@@ -22,12 +20,27 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - run: npm install yarn
-
     - run: yarn
 
     - run: yarn lint
 
-    - run: yarn build
+  test:
+    name: test ${{ matrix.node }} ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        node: [10.x]
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - run: yarn
 
     - run: yarn test
