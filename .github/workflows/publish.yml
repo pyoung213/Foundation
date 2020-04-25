@@ -111,7 +111,7 @@ jobs:
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
   
-  publish-low:
+  publish-firebase:
     name: publish-firebase
     runs-on: ubuntu-latest
     
