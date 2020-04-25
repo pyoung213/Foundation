@@ -18,7 +18,8 @@
     "build": "yarn clean && tsc",
     "test": "ts-mocha **/*.spec.ts --watch-extensions ts",
     "lint": "eslint **/*.ts",
-    "benchmarks": "ts-node utils/benchmarks.ts"
+    "benchmarks": "ts-node utils/benchmarks.ts",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",

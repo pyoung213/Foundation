@@ -15,9 +15,9 @@
     },
     "scripts": {
         "clean": "rm -rf dist",
-        "build": "tsc",
+        "build": "yarn clean && tsc",
         "lint": "eslint **/*.ts",
-        "prepublish": "yarn build"
+        "publish": "npm publish"
     },
     "repository": {
         "type": "git",
