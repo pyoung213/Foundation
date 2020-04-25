@@ -9,7 +9,7 @@ on: [push]
 #     types: [closed]
 
 jobs:
-  publish:
+  publish-async:
     name: publish
     runs-on: ubuntu-latest
     
@@ -19,13 +19,43 @@ jobs:
       with:
         node-version: 10
 
-    - run: yarn
+    - name: Set Current Version
+      shell: bash -ex {0}
+      run: |
+        CURRENT_VERSION=$(node -p 'require("./packages/async/package.json").version')
+        echo "::set-env name=CURRENT_VERSION::${CURRENT_VERSION}"
 
-    - run: yarn build
+    - name: Tag Check
+      id: tag_check
+      shell: bash -ex {0}
+      run: |
+        GET_API_URL="https://api.github.com/repos/${GITHUB_REPOSITORY}/git/ref/tags/async-v${CURRENT_VERSION}"
+        http_status_code=$(curl -LI $GET_API_URL -o /dev/null -w '%{http_code}\n' -s \
+          -H "Authorization: token ${GITHUB_TOKEN}")
+        if [ "$http_status_code" -ne "404" ] ; then
+          echo "::set-output name=exists_tag::true"
+        else
+          echo "::set-output name=exists_tag::false"
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Create Git Tag
+      if: steps.tag_check.outputs.exists_tag == 'false'
+      uses: azu/action-package-version-to-git-tag@v1
+      with:
+        version: ${{ env.CURRENT_VERSION }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_repo: ${{ github.repository }}
+        git_commit_sha: ${{ github.sha }}
+        git_tag_prefix: "async-v"
 
-    - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
-
-    - run: yarn publish:async
-
+    - name: Publish
+      if: steps.tag_check.outputs.exists_tag == 'false'
+      run: |
+        yarn
+        yarn build
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        yarn publish:async
       env:
         NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
