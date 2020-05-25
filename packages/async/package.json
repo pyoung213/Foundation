@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.1.6",
+    "version": "0.1.8",
     "main": "src/index.ts",
     "license": "MIT",
     "description": "Utility modules for async functions.",
@@ -18,7 +18,7 @@
         "build": "yarn clean && tsc",
         "test": "ts-mocha --watch-extensions ts",
         "lint": "eslint **/*.ts",
-        "publish": "yarn publish"
+        "publish": "yarn npm publish"
     },
     "repository": {
         "type": "git",
