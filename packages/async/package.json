@@ -1,10 +1,12 @@
 {
     "name": "foundation-async",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "main": "src/index.ts",
     "license": "MIT",
+    "private": false,
     "description": "Utility modules for async functions.",
     "author": "Patrick Young",
+    "email": "patrickdavidyoung@gmail.com",
     "keywords": [
         "async",
         "lodash"
