@@ -1,6 +1,6 @@
 {
     "name": "foundation-async",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "main": "src/index.ts",
     "license": "MIT",
     "private": false,
