@@ -16,7 +16,7 @@ $ npm i foundation-async
 
 Example
 ```js
-import { map } from "foundation-async";
+import { asyncMap } from "foundation-async";
 
 const array = [1, 2];
 const asyncFunc = (n) => {
@@ -24,6 +24,6 @@ const asyncFunc = (n) => {
         resolve(String(n));
     });
 }
-const result = await map(array, asyncFunc);
+const result = await asyncMap(array, asyncFunc);
 // result = ["1", "2"];
 ```
