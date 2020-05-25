@@ -8,23 +8,18 @@
         "build:async": "yarn workspace foundation-async build",
         "build:low": "yarn workspace foundation-low build",
         "build:firebase": "yarn workspace foundation-firebase build",
-        
         "start": "run-p start:*",
         "start:watch": "tsc --build",
-        
         "test": "run-p test:*",
         "test:async": "yarn workspace foundation-async test",
         "test:low": "yarn workspace foundation-low test",
-        
         "lint": "run-p lint:*",
         "lint:async": "yarn workspace foundation-async lint",
         "lint:low": "yarn workspace foundation-low lint",
-        
         "publish": "run-p publish:*",
         "publish:async": "yarn workspace foundation-async publish",
         "publish:low": "yarn workspace foundation-low publish",
         "publish:firebase": "yarn workspace foundation-firebase publish"
-
     },
     "devDependencies": {
         "@types/chai": "^4.2.11",
