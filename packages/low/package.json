@@ -30,6 +30,6 @@
     "@types/benchmark": "^1.0.31",
     "@types/lodash": "^4.14.149",
     "benchmark": "^2.1.4",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   }
 }
